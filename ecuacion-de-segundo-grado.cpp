@@ -56,5 +56,7 @@ int main (int argc, char *argv[]) {
         cout << "x_2 = " << Solucion2 << endl;
     }
 
+    cout << endl;
+
     return 0;
 }
