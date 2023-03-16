@@ -29,9 +29,7 @@ int main(){
 
         cout << "+";
     }
-    if (imaginario != 0){
 
-        cout << imaginario << "i";
-    }
+    cout << imaginario << "i";
     cout << endl;
 }
