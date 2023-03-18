@@ -30,19 +30,12 @@ int main (int argc, char *argv[]) {
 
       for (Comparador = Contador + 1; Comparador <= (NumeroElementos -1); Comparador++) {
 
-         if (array[Comparador] < array[Contador]) {
+         if (array[Contador] > array[Comparador]) {
 
             array[Contador] = array[Comparador];
          }
       }
-   }
-
-   cout << "Lista de numeros organizados: " << endl;
-
-   for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
-
       cout << array[Contador] << " ";
    }
-
    return 0;
 }
