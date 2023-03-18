@@ -1,17 +1,24 @@
 #include <iostream>
-#include <math.h>
-#include <cmath>
 
 using namespace std;
 
-int Contador, Num1, Num2, NumerosEvaluados, ValorMinimo;
+int main(){
 
-int main (int argc, char *argv[]) {
+   int NumeroElementos;
 
-    for (Contador = 1; Contador <= NumerosEvaluados; Contador++) {
+   cout << "Numero de elementos = "; cin >> NumeroElementos;
+   cout << endl;
+   int array[NumeroElementos];
 
-        cout << "Numero " << Contador << " = ";
-        cin >> Num1;
-    }
-    return 0;
+   cout << "Ingresa los numeros" << endl;
+
+   for (int i = 0; i <= (NumeroElementos - 1); i++) {
+
+      cin >> array[i];
+   }
+
+   for (int i = 0; i <=(NumeroElementos -1); i++) {
+
+      cout << array[i];
+   }
 }
