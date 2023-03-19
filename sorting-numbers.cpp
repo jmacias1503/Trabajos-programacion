@@ -18,13 +18,13 @@ int main (int argc, char *argv[]) {
 
       cin >> array[Contador];
    }
-   cout << "Lista de numeros sin organizar: " << endl;
+   cout << endl << "Lista de numeros sin organizar: " << endl;
 
    for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
 
-      cout << array[Contador] << " ";
+      cout << array[Contador] << "\t";
    }
-   cout << endl;
+   cout << endl << endl;
 
    for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
 
@@ -41,8 +41,8 @@ int main (int argc, char *argv[]) {
 
    for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
 
-      cout << array[Contador] << " ";
+      cout << array[Contador] << "\t";
    }
-
+   cout << endl;
    return 0;
 }
