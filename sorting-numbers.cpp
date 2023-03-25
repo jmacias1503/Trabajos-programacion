@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int Contador, Comparador;
-int NumeroElementos;
+int Contador, Comparador, NumeroMenor,NumeroElementos;
 
 int main (int argc, char *argv[]) {
 
@@ -31,17 +30,11 @@ int main (int argc, char *argv[]) {
       for (Comparador = Contador + 1; Comparador <= (NumeroElementos -1); Comparador++) {
 
          if (array[Comparador] < array[Contador]) {
-
-            array[Contador] = array[Comparador];
+            NumeroMenor = array[Comparador];
          }
+         NumeroMenor = array[Contador];
       }
-   }
-
-   cout << "Lista de numeros organizados: " << endl;
-
-   for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
-
-      cout << array[Contador] << "\t";
+      cout << NumeroMenor << " ";
    }
    cout << endl;
    return 0;
