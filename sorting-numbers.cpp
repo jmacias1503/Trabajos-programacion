@@ -2,40 +2,7 @@
 
 using namespace std;
 
-int Contador, Comparador, NumeroMenor,NumeroElementos;
-
-int main (int argc, char *argv[]) {
-
-   int array[NumeroElementos];
-
-   cout << "Numero de elementos = "; cin >> NumeroElementos;
-   cout << endl;
-
-   cout << "Ingresa los numeros" << endl;
-
-   for (Contador = 0; Contador <= (NumeroElementos - 1); Contador++) {
-
-      cin >> array[Contador];
-   }
-   cout << endl << "Lista de numeros sin organizar: " << endl;
-
-   for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
-
-      cout << array[Contador] << "\t";
-   }
-   cout << endl << endl;
-
-   for (Contador = 0; Contador <=(NumeroElementos -1); Contador++) {
-
-      for (Comparador = Contador + 1; Comparador <= (NumeroElementos -1); Comparador++) {
-
-         if (array[Comparador] < array[Contador]) {
-            NumeroMenor = array[Comparador];
-         }
-         NumeroMenor = array[Contador];
-      }
-      cout << NumeroMenor << " ";
-   }
-   cout << endl;
+int main (int argc, char *argv[])
+{
    return 0;
 }
