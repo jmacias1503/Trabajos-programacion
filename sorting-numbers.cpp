@@ -1,3 +1,5 @@
+#include <cmath>
+#include <math.h>
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -14,16 +16,15 @@ void selectionSort(double arr[], int n) {
          }
       }
 
-      double temp = arr[ValorMinimo];
+      double CambioDeValor = arr[ValorMinimo];
       arr[ValorMinimo] = arr[i];
-      arr[i] = temp;
+      arr[i] = CambioDeValor;
    }
 }
 
-int main (int argc, char *argv[])
-{
+int main (int argc, char *argv[]) {
    int n;
-   float Promedio, SumaPromedio;
+   float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion;
 
    cout << "Numero de elementos: ";
    cin >> n;
@@ -38,6 +39,11 @@ int main (int argc, char *argv[])
 
    Promedio = SumaPromedio / n;
 
+   for (int i = 0; i < n; i++) {
+      SumaDesviacion = SumaDesviacion + (arr[i] - Promedio);
+   }
+   DesviacionEstandar = sqrt((SumaDesviacion)/n);
+
    selectionSort(arr, n);
 
    cout << "Lista ordenada: ";
@@ -46,6 +52,6 @@ int main (int argc, char *argv[])
    }
    cout << endl;
 
-   cout << "Promedio: " << Promedio;
+   cout << "Promedio: " << Promedio << endl;
    return 0;
 }
