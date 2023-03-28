@@ -4,18 +4,18 @@ using namespace std;
 
 void selectionSort(double arr[], int n) {
 
-   int i, j, min_idx;
+   int i, j, ValorMinimo;
 
    for (i = 0; i < n-1; i++) {
-      min_idx = i;
+      ValorMinimo = i;
       for (j = i+1; j < n; j++){
-         if (arr[j] < arr[min_idx]){
-            min_idx = j;
+         if (arr[j] < arr[ValorMinimo]){
+            ValorMinimo = j;
          }
       }
 
-      double temp = arr[min_idx];
-      arr[min_idx] = arr[i];
+      double temp = arr[ValorMinimo];
+      arr[ValorMinimo] = arr[i];
       arr[i] = temp;
    }
 }
