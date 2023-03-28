@@ -53,5 +53,6 @@ int main (int argc, char *argv[]) {
    cout << endl;
 
    cout << "Promedio: " << Promedio << endl;
+   cout << "DesviacionEstandar: " << DesviacionEstandar << endl;
    return 0;
 }
