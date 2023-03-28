@@ -39,5 +39,6 @@ int main (int argc, char *argv[])
    for (int i = 0; i < n; i++) {
       cout << fixed << setprecision(2) << arr[i] << " ";
    }
+   cout << endl;
    return 0;
 }
