@@ -23,6 +23,8 @@ void selectionSort(double arr[], int n) {
 int main (int argc, char *argv[])
 {
    int n;
+   float Promedio, SumaPromedio;
+
    cout << "Numero de elementos: ";
    cin >> n;
 
@@ -31,7 +33,10 @@ int main (int argc, char *argv[])
 
    for (int i = 0; i < n; i++) {
       cin >> arr[i];
+      SumaPromedio = SumaPromedio + arr[i];
    }
+
+   Promedio = SumaPromedio / n;
 
    selectionSort(arr, n);
 
@@ -40,5 +45,7 @@ int main (int argc, char *argv[])
       cout << fixed << setprecision(2) << arr[i] << " ";
    }
    cout << endl;
+
+   cout << "Promedio: " << Promedio;
    return 0;
 }
