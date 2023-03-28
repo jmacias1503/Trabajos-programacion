@@ -40,7 +40,7 @@ int main (int argc, char *argv[]) {
    Promedio = SumaPromedio / n;
 
    for (int i = 0; i < n; i++) {
-      SumaDesviacion = SumaDesviacion + (arr[i] - Promedio);
+      SumaDesviacion = SumaDesviacion + pow((arr[i] - Promedio),2);
    }
    DesviacionEstandar = sqrt((SumaDesviacion)/n);
 
