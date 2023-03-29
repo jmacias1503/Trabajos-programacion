@@ -1,7 +1,6 @@
 #include <cmath>
 #include <math.h>
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 void selectionSort(double arr[], int n) {
@@ -56,7 +55,7 @@ int main (int argc, char *argv[]) {
 
    cout << "Lista ordenada: ";
    for (int i = 0; i < n; i++) {
-      cout << fixed << setprecision(2) << arr[i] << " ";
+      cout << arr[i] << " ";
    }
    cout << endl;
 
