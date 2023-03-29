@@ -24,7 +24,7 @@ void selectionSort(double arr[], int n) {
 
 int main (int argc, char *argv[]) {
    int n;
-   float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion;
+   float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion, Mediana;
 
    cout << "Numero de elementos: ";
    cin >> n;
@@ -46,6 +46,14 @@ int main (int argc, char *argv[]) {
 
    selectionSort(arr, n);
 
+   if (n % 2 == 0) {
+
+      Mediana = (arr[n/2] + arr[(n/2)-1])/2;
+   }
+   else {
+      Mediana = arr[(n-1)/2];
+   }
+
    cout << "Lista ordenada: ";
    for (int i = 0; i < n; i++) {
       cout << fixed << setprecision(2) << arr[i] << " ";
@@ -54,5 +62,6 @@ int main (int argc, char *argv[]) {
 
    cout << "Promedio: " << Promedio << endl;
    cout << "DesviacionEstandar: " << DesviacionEstandar << endl;
+   cout << "Mediana: " << Mediana << endl;
    return 0;
 }
