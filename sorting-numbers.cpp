@@ -63,5 +63,6 @@ int main () {
    cout << "Promedio: " << Promedio << endl;
    cout << "DesviacionEstandar: " << DesviacionEstandar << endl;
    cout << "Mediana: " << Mediana << endl;
+   cout << "Rango: " << ListaDeNumeros[NumeroDatos-1] - ListaDeNumeros[0];
    return 0;
 }
