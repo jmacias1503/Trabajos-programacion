@@ -3,62 +3,63 @@
 #include <iostream>
 using namespace std;
 
-void selectionSort(double arr[], int n) {
+void OrdenarNumeros(double ListaDeNumeros[], int NumeroDatos) { //Ordenar numeros
 
    int i, j, ValorMinimo;
 
-   for (i = 0; i < n-1; i++) {
+   for (i = 0; i < NumeroDatos-1; i++) {
       ValorMinimo = i;
-      for (j = i+1; j < n; j++){
-         if (arr[j] < arr[ValorMinimo]){
+      for (j = i+1; j < NumeroDatos; j++){
+         if (ListaDeNumeros[j] < ListaDeNumeros[ValorMinimo]){
             ValorMinimo = j;
          }
       }
 
-      double CambioDeValor = arr[ValorMinimo];
-      arr[ValorMinimo] = arr[i];
-      arr[i] = CambioDeValor;
+      double CambioDeValor = ListaDeNumeros[ValorMinimo];
+      ListaDeNumeros[ValorMinimo] = ListaDeNumeros[i];
+      ListaDeNumeros[i] = CambioDeValor;
    }
 }
 
 int main () {
-   int n;
-   float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion, Mediana;
+   int NumeroDatos;
+   float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion, Mediana; //Declaracion de variables
 
    cout << "Numero de elementos: ";
-   cin >> n;
+   cin >> NumeroDatos;
 
-   double arr[n];
+   double ListaDeNumeros[NumeroDatos];
    cout << "Elementos: \n";
 
-   for (int i = 0; i < n; i++) {
-      cin >> arr[i];
-      SumaPromedio = SumaPromedio + arr[i];
+   for (int i = 0; i < NumeroDatos; i++) {
+      cin >> ListaDeNumeros[i]; //Conocer numeros
+      SumaPromedio = SumaPromedio + ListaDeNumeros[i]; //Sumar los numeros mientras se van conociendo para el promedio
    }
 
-   Promedio = SumaPromedio / n;
+   Promedio = SumaPromedio / NumeroDatos;
 
-   for (int i = 0; i < n; i++) {
-      SumaDesviacion = SumaDesviacion + pow((arr[i] - Promedio),2);
+   for (int i = 0; i < NumeroDatos; i++) {
+      SumaDesviacion = SumaDesviacion + pow((ListaDeNumeros[i] - Promedio),2); //Suma repetitiva para la desviacion
    }
-   DesviacionEstandar = sqrt((SumaDesviacion)/n);
+   DesviacionEstandar = sqrt((SumaDesviacion)/NumeroDatos);
 
-   selectionSort(arr, n);
+   OrdenarNumeros(ListaDeNumeros, NumeroDatos);
 
-   if (n % 2 == 0) {
+   if (NumeroDatos % 2 == 0) { //Calcular mediana si el numero de datos es par
 
-      Mediana = (arr[n/2] + arr[(n/2)-1])/2;
+      Mediana = (ListaDeNumeros[NumeroDatos/2] + ListaDeNumeros[(NumeroDatos/2)-1])/2;
    }
-   else {
-      Mediana = arr[(n-1)/2];
+   else { //Calcular mediana si el numero de datos es impar
+      Mediana = ListaDeNumeros[(NumeroDatos-1)/2];
    }
 
-   cout << "Lista ordenada: ";
-   for (int i = 0; i < n; i++) {
-      cout << arr[i] << " ";
+   cout << "Lista ordenada: "; //Imprime la lista ordenada
+   for (int i = 0; i < NumeroDatos; i++) {
+      cout << ListaDeNumeros[i] << " ";
    }
    cout << endl;
 
+   //Imprime los demas parametros solicitados
    cout << "Promedio: " << Promedio << endl;
    cout << "DesviacionEstandar: " << DesviacionEstandar << endl;
    cout << "Mediana: " << Mediana << endl;
