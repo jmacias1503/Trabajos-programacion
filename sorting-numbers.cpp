@@ -21,7 +21,7 @@ void selectionSort(double arr[], int n) {
    }
 }
 
-int main (int argc, char *argv[]) {
+int main () {
    int n;
    float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion, Mediana;
 
