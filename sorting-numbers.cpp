@@ -32,7 +32,7 @@ int main () {
    cout << "Elementos: \n";
 
    for (int i = 0; i < NumeroDatos; i++) {
-      cout << "Elemento " << i+1;
+      cout << "Elemento " << i+1 << ": ";
       cin >> ListaDeNumeros[i]; //Conocer numeros
       SumaPromedio = SumaPromedio + ListaDeNumeros[i]; //Sumar los numeros mientras se van conociendo para el promedio
    }
