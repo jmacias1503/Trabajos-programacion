@@ -21,6 +21,30 @@ void OrdenarNumeros(double ListaDeNumeros[], int NumeroDatos) { //Ordenar numero
    }
 }
 
+int FuncionModa(double ListaDeNumeros[], int NumeroDatos){
+   double Moda = ListaDeNumeros[0];
+   int ConteoFreqMax = 1;
+   int ConteoFreq = 1;
+
+   for (int i = 1; i < NumeroDatos; i++) {
+      if (ListaDeNumeros[i] == ListaDeNumeros[i-1]) {
+         ConteoFreq++;
+      }
+      else { 
+         if (ConteoFreq > ConteoFreqMax) {
+            ConteoFreqMax = ConteoFreq;
+            Moda = ListaDeNumeros[i-1];
+         } 
+         ConteoFreq = 1;
+      }
+   }
+   if (ConteoFreq > ConteoFreqMax) {
+      ConteoFreqMax = ConteoFreq;
+      Moda = ListaDeNumeros[NumeroDatos - 1];
+   }
+   return Moda;
+}
+
 int main () {
    int NumeroDatos;
    float Promedio, SumaPromedio, DesviacionEstandar, SumaDesviacion, Mediana; //Declaracion de variables
@@ -28,7 +52,7 @@ int main () {
    cout << "Numero de elementos: ";
    cin >> NumeroDatos;
 
-   double ListaDeNumeros[NumeroDatos];
+   double ListaDeNumeros[NumeroDatos], Moda;
    cout << "Elementos: \n";
 
    for (int i = 0; i < NumeroDatos; i++) {
@@ -45,6 +69,7 @@ int main () {
    DesviacionEstandar = sqrt((SumaDesviacion)/NumeroDatos);
 
    OrdenarNumeros(ListaDeNumeros, NumeroDatos);
+   Moda = FuncionModa(ListaDeNumeros, NumeroDatos);
 
    if (NumeroDatos % 2 == 0) { //Calcular mediana si el numero de datos es par
 
@@ -65,5 +90,6 @@ int main () {
    cout << "DesviacionEstandar: " << DesviacionEstandar << endl;
    cout << "Mediana: " << Mediana << endl;
    cout << "Rango: " << ListaDeNumeros[NumeroDatos-1] - ListaDeNumeros[0] << endl;
+   cout << "Moda: " << Moda << endl;
    return 0;
 }
