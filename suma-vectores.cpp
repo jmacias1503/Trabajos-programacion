@@ -40,5 +40,7 @@ else {
    Angulo = atan(SumaComponentesY/SumaComponentesX);
 }
 
+cout << "Resultante: " << Resultante << endl << "Direccion: " << endl << Angulo << " radianes" << endl << Angulo * (180 / PI) << "grados";
+cout << endl;
 return 0;
 }
