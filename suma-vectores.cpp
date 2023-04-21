@@ -34,10 +34,23 @@ for (int i = 0; i < NumeroDatos; i++) {
 Resultante = sqrt(pow(SumaComponentesX,2) + pow(SumaComponentesY,2));
 
 if (SumaComponentesX == 0) {
-   Angulo = 90;
+   Angulo = (PI / 2);
 }
 else {
    Angulo = atan(SumaComponentesY/SumaComponentesX);
+}
+
+if (SumaComponentesX < 0) {
+
+   Angulo += PI;
+}
+else {
+
+   Angulo += 2*PI;
+}
+if (Angulo > 2*PI) {
+
+   Angulo -= 2*PI;
 }
 
 cout << "Resultante: " << Resultante << endl << "Direccion: " << endl << Angulo << " radianes" << endl << Angulo * (180 / PI) << "grados";
