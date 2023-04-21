@@ -35,9 +35,6 @@ int main () {
    if (SumaComponentesX == 0) {
       Angulo = (PI / 2);
    }
-   else if (SumaComponentesY == 0) {
-      Angulo = 0;
-   }
    else {
       Angulo = atan(SumaComponentesY/SumaComponentesX);
    }
@@ -49,10 +46,10 @@ int main () {
       Angulo += (2*PI);
    }
 
-   if (Angulo > (2*PI)) {
+   while (Angulo > (2*PI)) {
       Angulo -= (2*PI);
    }
-   cout << "Resultante: " << Resultante << endl << "Direccion: " << endl << Angulo << " radianes" << endl << Angulo * (180 / PI) << "grados";
-   cout << endl;
+
+   cout << "Resultante: " << Resultante << endl << "Direccion: " << endl << Angulo << " radianes" << endl << Angulo * (180 / PI) << " grados" << endl;
    return 0;
 }
