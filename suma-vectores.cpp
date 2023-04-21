@@ -6,7 +6,7 @@ using namespace std;
 int main () {
 
    double const PI = 3.141592;
-   int NumeroDatos, ConstanteAngulo, MedidaGrados;
+   int NumeroDatos, MedidaGrados;
 
    cout << "Numero de datos: "; cin >> NumeroDatos; cout << endl << endl;
 
