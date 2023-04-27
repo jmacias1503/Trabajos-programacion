@@ -73,6 +73,6 @@ int main () { //funcion principal
    else if (Angulo < (PI/2)) {
       Cuadrante = 1;
    }
-   cout << "Resultante: " << Resultante << endl << "Direccion: " << endl << Angulo << " radianes" << endl << (Angulo * 180) / PI << " grados" << endl; //imprime resultados
+   cout << "Resultante: " << Resultante << endl << "Direccion: " << endl << Angulo << " radianes" << endl << (Angulo * 180) / PI << " grados" << endl << "Cuadrante: " << Cuadrante;
    return 0;
 }
