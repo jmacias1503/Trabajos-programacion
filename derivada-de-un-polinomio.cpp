@@ -1,21 +1,33 @@
+#include <cmath>
 #include <iostream>
 #include <string>
 using namespace std;
 
 void Literales(float Coeficiente[], int i, float Grado[], string valor){
-   if (Coeficiente[i] == 0) {
+   if (Coeficiente != 0) {
+      cout << valor << abs(Coeficiente[i]);
+      if (Grado[i] == 1) {
+         cout << "x";
+      }
+      if (Grado[i] !=1 && Grado[i] != 0) {
+         cout << "^" << Grado[i];
+      }
    }
-   else {
-   cout << valor << abs(Coeficiente[i]);
-   }
-   if (Grado[i] == 0) {
-   }
-   else if (Grado[i]==1) {
-      cout << "x";
-   }
-   else {
-      cout << "x^" << Grado[i];
-   }
+   // if (Coeficiente[i] == 0) {
+   // }
+   // else {
+   // cout << valor << abs(Coeficiente[i]);
+   // }
+
+
+   //if (Grado[i] == 0) {
+   //}
+   //else if (Grado[i]==1) {
+   //   cout << "x";
+   //}
+   //else {
+   //   cout << "x^" << Grado[i];
+   //}
 }
 
 string Signo(float Coeficiente[], int i) {
