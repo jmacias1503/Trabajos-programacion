@@ -23,6 +23,7 @@ int main () {
       cout <<"\e[A" << Coeficiente[i] << "x^";
       cin >> Grado[i];
       valor[i] = Signo( Coeficiente, i);
+      cout << endl;
    }
    cout << "f(x) = " << Coeficiente[0] << "x^" << Grado[0] << " ";
    for (int i =1; i < Terminos; i++) {
