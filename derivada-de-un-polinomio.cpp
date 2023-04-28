@@ -10,7 +10,6 @@ string Signo(float Coeficiente[], int i) {
    }
    return valor;
 }
-
 int main () {
    int Terminos, Grado[Terminos];
 
