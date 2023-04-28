@@ -34,4 +34,5 @@ int main () {
       }
       cout << valor[i] << abs(Coeficiente[i]) << "x^" << Grado[i] << " ";
    }
+   cout << endl;
 }
