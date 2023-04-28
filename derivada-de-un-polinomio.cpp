@@ -3,6 +3,14 @@
 #include <string>
 using namespace std;
 
+string Signo(float Coeficiente[], int i) {
+   string valor = "+";
+   if (Coeficiente[i] < 0) {
+      valor = "-";
+   }
+   return valor;
+}
+
 int main () {
    int Terminos, Grado[Terminos];
 
@@ -11,13 +19,10 @@ int main () {
    string valor[Terminos];
 
    for (int i = 0; i < Terminos; i++) {
-      valor[i] = "+";
       cin >> Coeficiente[i]; 
       cout <<"\e[A" << Coeficiente[i] << "x^";
       cin >> Grado[i];
-      if (Coeficiente[i] < 0) {
-         valor[i] = "-";
-      }
+      valor[i] = Signo( Coeficiente, i);
    }
    cout << "f(x) = " << Coeficiente[0] << "x^" << Grado[0] << " ";
    for (int i =1; i < Terminos; i++) {
@@ -25,12 +30,9 @@ int main () {
    }
    cout << "\nf'(x) = " << Coeficiente[0] * Grado[0] << "x^" << Grado[0] - 1 << " ";
    for (int i = 1; i < Terminos; i++) {
-      valor[i] = "+";
       Coeficiente[i] *= Grado[i];
       Grado[i]--;
-      if (Coeficiente[i] < 0) {
-         valor[i] = "-";
-      }
+      valor[i] = Signo(Coeficiente, i);
       cout << valor[i] << abs(Coeficiente[i]) << "x^" << Grado[i] << " ";
    }
    cout << endl;
