@@ -26,6 +26,12 @@ int main () {
    }
    cout << "\nf'(x) = " << Coeficiente[0] * Grado[0] << "x^" << Grado[0] - 1 << " ";
    for (int i = 1; i < Terminos; i++) {
-      cout << valor[i] << abs(Coeficiente[i]) * Grado[i] << "x^" << Grado[i] -1 << " ";
+      valor[i] = "+";
+      Coeficiente[i] *= Grado[i];
+      Grado[i]--;
+      if (Coeficiente[i] < 0) {
+         valor[i] = "-";
+      }
+      cout << valor[i] << abs(Coeficiente[i]) << "x^" << Grado[i] << " ";
    }
 }
