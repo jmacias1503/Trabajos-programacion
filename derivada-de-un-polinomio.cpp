@@ -10,7 +10,6 @@ int main () {
    float Coeficiente[Terminos];
    string valor[Terminos];
 
-
    for (int i = 0; i < Terminos; i++) {
       valor[i] = "+";
       cin >> Coeficiente[i]; 
