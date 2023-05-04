@@ -4,19 +4,6 @@
 using namespace std;
 
 int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
-   //if (Coeficiente[i] != 0) {
-   //   if (i != 0) {
-   //      cout << valor[i];
-   //   }
-   //   cout << abs(Coeficiente[i]);
-   //   if (Grado[i] != 0) {
-   //      cout << "x";
-   //   }
-   //   if (Grado[i] !=1 && Grado[i] != 0) {
-   //      cout << "^" << Grado[i];
-   //   }
-   //   cout << " ";
-   //}
 
    if (Coeficiente[i] == 0) {
       return 0;
@@ -32,21 +19,7 @@ int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
    if (Grado[i] != 0 && Grado[i] != 1) {
       cout << "^" << Grado[i];
    }
-   // if (Coeficiente[i] == 0) {
-   // }
-   // else {
-   // cout << valor << abs(Coeficiente[i]);
-   // }
-
-
-   //if (Grado[i] == 0) {
-   //}
-   //else if (Grado[i]==1) {
-   //   cout << "x";
-   //}
-   //else {
-   //   cout << "x^" << Grado[i];
-   //}
+   cout << " ";
    return 0;
 }
 
@@ -57,7 +30,6 @@ string Signo(float Coeficiente[], int i) {
    }
    return valor;
 }
-
 int main () {
    int Terminos, i;
 
@@ -66,16 +38,17 @@ int main () {
    string valor[Terminos];
 
    for (i = 0; i < Terminos; i++) {
+      cout << i + 1 << ": " << endl;
       cin >> Coeficiente[i]; 
       cout <<"\e[A" << Coeficiente[i] << "x^";
       cin >> Grado[i];
       valor[i] = Signo( Coeficiente, i);
+      cout << endl;
    }
    i = 0;
    cout << "f(x) =";
    for (int i =0; i < Terminos; i++) {
-      Literales(Coeficiente, i, Grado, valor);
-      //cout << valor[i] << abs(Coeficiente[i]) <<"x^" << Grado[i] << " ";
+   Literales(Coeficiente, i, Grado, valor);
    }
    i = 0;
    cout << "\nf'(x) = " ;
@@ -84,7 +57,6 @@ int main () {
       Grado[i]--;
       valor[i] = Signo(Coeficiente, i);
       Literales(Coeficiente, i, Grado, valor);
-      //cout << valor[i] << abs(Coeficiente[i]) << "x^" << Grado[i] << " ";
    }
    cout << endl;
 }
