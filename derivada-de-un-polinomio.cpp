@@ -57,7 +57,7 @@ int main () {
       valor[i] = Signo( Coeficiente, i);
       cout << endl;
    }
-   cout << "f(x) =";
+   cout << "f(x) = ";
    SumaTerminos(Coeficiente, Grado, Terminos, i);
    for (int i =0; i < Terminos; i++) {
    Literales(Coeficiente, i, Grado, valor);
