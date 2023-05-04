@@ -64,7 +64,6 @@ int main () {
    Literales(Coeficiente, i, Grado, valor);
    }
    cout << "\nf'(x) = " ;
-   SumaTerminos(Coeficiente, Grado, Terminos);
    for (i = 0; i < Terminos; i++) {
       Coeficiente[i] *= Grado[i];
       Grado[i]--;
