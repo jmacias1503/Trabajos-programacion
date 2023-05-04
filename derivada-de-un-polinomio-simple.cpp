@@ -4,7 +4,6 @@
 using namespace std;
 
 int Literales(float c[], int i, float g[], string v[]){
-
    if (c[i] == 0) {
       return 0;
    }
@@ -12,7 +11,9 @@ int Literales(float c[], int i, float g[], string v[]){
       cout << v[i];
       c[i] = abs(c[i]);
    }
-   cout << c[i];
+   if (c[i] != 1 && g[i] != 0) {
+      cout << c[i];
+   }
    if (g[i] != 0) {
       cout << "x";
    }
@@ -22,7 +23,16 @@ int Literales(float c[], int i, float g[], string v[]){
    cout << " ";
    return 0;
 }
-
+void SumaTerminos (float c[], float g[], int n, int i){
+   for (i = 0; i < n ; i++) {
+      for (int j = i + 1; j < n; j++) {
+         if (g[i] == g [j]) {
+            c[i] += c[j];
+            c[j] = 0;
+         }
+      }
+   }
+}
 string Signo(float c[], int i) {
    string v = "+";
    if (c[i] < 0) {
@@ -32,11 +42,9 @@ string Signo(float c[], int i) {
 }
 int main () {
    int n, i;
-
    cout << "Terminos: "; cin >> n;
    float c[n], g[n];
    string v[n];
-
    for (i = 0; i < n; i++) {
       cout << i + 1 << ": " << endl;
       cin >> c[i]; 
@@ -45,12 +53,11 @@ int main () {
       v[i] = Signo( c, i);
       cout << endl;
    }
-   i = 0;
    cout << "f(x) =";
+   SumaTerminos(c, g, n, i);
    for (int i =0; i < n; i++) {
    Literales(c, i, g, v);
    }
-   i = 0;
    cout << "\nf'(x) = " ;
    for (i = 0; i < n; i++) {
       c[i] *= g[i];
