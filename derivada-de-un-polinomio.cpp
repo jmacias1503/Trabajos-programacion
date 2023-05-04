@@ -12,7 +12,9 @@ int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
       cout << valor[i];
       Coeficiente[i] = abs(Coeficiente[i]);
    }
-   cout << Coeficiente[i];
+   if (Coeficiente[i] != 1 && Grado[i] != 0) {
+      cout << Coeficiente[i];
+   }
    if (Grado[i] != 0) {
       cout << "x";
    }
