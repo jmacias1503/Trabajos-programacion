@@ -58,7 +58,6 @@ int main () {
       cout << endl;
    }
    cout << "f(x) = ";
-   SumaTerminos(Coeficiente, Grado, Terminos, i);
    for (int i =0; i < Terminos; i++) {
    Literales(Coeficiente, i, Grado, valor);
    }
