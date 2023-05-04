@@ -19,6 +19,7 @@ int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
    if (Grado[i] != 0 && Grado[i] != 1) {
       cout << "^" << Grado[i];
    }
+   cout << " ";
    return 0;
 }
 
