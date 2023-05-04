@@ -23,7 +23,7 @@ int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
    return 0;
 }
 
-int SumaTerminos (float Coeficiente[], float Grado[], int Terminos){
+void SumaTerminos (float Coeficiente[], float Grado[], int Terminos){
 
    for (int i = 0; i < Terminos ; i++) {
       for (int j = i - 1; i < Terminos; j++) {
@@ -33,7 +33,6 @@ int SumaTerminos (float Coeficiente[], float Grado[], int Terminos){
          }
       }
    }
-   return 0;
 }
 
 string Signo(float Coeficiente[], int i) {
