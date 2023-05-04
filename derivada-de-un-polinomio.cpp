@@ -23,6 +23,19 @@ int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
    return 0;
 }
 
+int SumaTerminos (float Coeficiente[], float Grado[], int Terminos){
+
+   for (int i = 0; i < Terminos ; i++) {
+      for (int j = i - 1; i < Terminos; j++) {
+         if (Grado[i] == Grado [j]) {
+            Coeficiente[i] += Coeficiente[j];
+            Coeficiente[j] = 0;
+         }
+      }
+   }
+   return 0;
+}
+
 string Signo(float Coeficiente[], int i) {
    string valor = "+";
    if (Coeficiente[i] < 0) {
@@ -45,13 +58,13 @@ int main () {
       valor[i] = Signo( Coeficiente, i);
       cout << endl;
    }
-   i = 0;
    cout << "f(x) =";
+   SumaTerminos(Coeficiente, Grado, Terminos);
    for (int i =0; i < Terminos; i++) {
    Literales(Coeficiente, i, Grado, valor);
    }
-   i = 0;
    cout << "\nf'(x) = " ;
+   SumaTerminos(Coeficiente, Grado, Terminos);
    for (i = 0; i < Terminos; i++) {
       Coeficiente[i] *= Grado[i];
       Grado[i]--;
