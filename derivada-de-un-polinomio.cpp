@@ -64,12 +64,9 @@ int main () {
    float Coeficiente[Terminos], Grado[Terminos];
    string valor[Terminos];
 
-<<<<<<< HEAD
    for (int i = 0; i < Terminos; i++) {
       cout << i + 1 << ": " << endl;
-=======
    for (i = 0; i < Terminos; i++) {
->>>>>>> dev
       cin >> Coeficiente[i]; 
       cout <<"\e[A" << Coeficiente[i] << "x^";
       cin >> Grado[i];
