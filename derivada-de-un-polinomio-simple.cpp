@@ -1,7 +1,27 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 #include <string>
 using namespace std;
+
+int Literales(float c[], int i, float g[], string v[]){
+
+   if (c[i] == 0) {
+      return 0;
+   }
+   if (i!=0) {
+      cout << v[i];
+      c[i] = abs(c[i]);
+   }
+   cout << c[i];
+   if (g[i] != 0) {
+      cout << "x";
+   }
+   if (g[i] != 0 && g[i] != 1) {
+      cout << "^" << g[i];
+   }
+   cout << " ";
+   return 0;
+}
 
 string Signo(float c[], int i) {
    string v = "+";
@@ -11,28 +31,32 @@ string Signo(float c[], int i) {
    return v;
 }
 int main () {
-   int n, e[n];
+   int n, i;
 
    cout << "Terminos: "; cin >> n;
-   float c[n];
+   float c[n], g[n];
    string v[n];
 
-   for (int i = 0; i < n; i++) {
+   for (i = 0; i < n; i++) {
+      cout << i + 1 << ": " << endl;
       cin >> c[i]; 
       cout <<"\e[A" << c[i] << "x^";
-      cin >> e[i];
+      cin >> g[i];
       v[i] = Signo( c, i);
+      cout << endl;
    }
-   cout << "f(x) = " << c[0] << "x^" << e[0] << " ";
-   for (int i =1; i < n; i++) {
-      cout << v[i] << abs(c[i]) <<"x^" << e[i] << " ";
+   i = 0;
+   cout << "f(x) =";
+   for (int i =0; i < n; i++) {
+   Literales(c, i, g, v);
    }
-   cout << "\nf'(x) = " << c[0] * e[0] << "x^" << e[0] - 1 << " ";
-   for (int i = 1; i < n; i++) {
-      c[i] *= e[i];
-      e[i]--;
+   i = 0;
+   cout << "\nf'(x) = " ;
+   for (i = 0; i < n; i++) {
+      c[i] *= g[i];
+      g[i]--;
       v[i] = Signo(c, i);
-      cout << v[i] << abs(c[i]) << "x^" << e[i] << " ";
+      Literales(c, i, g, v);
    }
    cout << endl;
 }
