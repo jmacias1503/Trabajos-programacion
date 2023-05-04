@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 int Literales(float c[], int i, float g[], string v[]){
    if (c[i] == 0) {
       return 0;
