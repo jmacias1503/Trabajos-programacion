@@ -49,7 +49,7 @@ int main () {
    string v[n];
 
    for (i = 0; i < n; i++) {
-      cout << "Termino" << i + 1 << ": " << endl;
+      cout << "Termino " << i + 1 << ": " << endl;
       cin >> c[i]; 
       cout <<"\e[A" << c[i] << "x^";
       cin >> g[i];
