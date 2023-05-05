@@ -8,7 +8,7 @@ int Literales(float c[], int i, float g[], string v[]){
    if (c[i] == 0) {
       return 0;
    }
-   if (i!=0) {
+   if (i!=0 && v[i] == "+") {
       cout << v[i];
    }
       cout << abs(c[i]);
