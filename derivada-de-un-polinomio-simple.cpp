@@ -57,11 +57,11 @@ int main () {
       cout << endl;
    }
    cout << "f(x) = ";
+   SumaTerminos(c, g, n, i);
    for (int i =0; i < n; i++) {
    Literales(c, i, g, v);
    }
    cout << "\nf'(x) = " ;
-   SumaTerminos(c, g, n, i);
    for (i = 0; i < n; i++) {
       c[i] *= g[i];
       g[i]--;
