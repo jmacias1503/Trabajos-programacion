@@ -1,5 +1,6 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
+#include <string>
 using namespace std;
 
 int Literales(float Coeficiente[], int i, float Grado[], string valor[]){
@@ -44,8 +45,8 @@ int main () {
    int Terminos, i;
 
    cout << "Terminos: "; cin >> Terminos;
-   float Coeficiente[Terminos], Grado[Terminos], DerivadaCoeficiente[Terminos], DerivadaGrado[Terminos];
-   string valor[Terminos], DerivadaValor[Terminos];
+   float Coeficiente[Terminos], Grado[Terminos];
+   string valor[Terminos];
 
    for (i = 0; i < Terminos; i++) {
       cout << "Termino" << i + 1 << ": " << endl;
@@ -61,29 +62,10 @@ int main () {
    }
    cout << "\nf'(x) = " ;
    for (i = 0; i < Terminos; i++) {
-      DerivadaCoeficiente[i] = Coeficiente[i] * Grado[i];
-      DerivadaGrado[i] = Grado[i]--;
+      Coeficiente[i] *= Grado[i];
+      Grado[i]--;
       valor[i] = Signo(Coeficiente, i);
-      Literales(DerivadaCoeficiente, i, DerivadaGrado, DerivadaValor);
+      Literales(Coeficiente, i, Grado, valor);
    }
    cout << endl;
-
-   // empieza la solución de la ecuación
-   // Utilizar if's para saber si x_n+1 + x_n == 0
-
-   int Precision;
-   cout << "Precision para el valor (iteraciones): ";
-   cin >> Precision;
-   float Iteracion[Precision], Funcion[Precision], FuncionDerivada[Precision];
-   cout << "Valor de primer iteracion: ";
-   cin >> Iteracion[0];
-
-   for (int j = 0; i < Precision; Precision++) {
-      for (int i = 0; i < Terminos; i++) {
-         Funcion[j] += Coeficiente[i] * pow(Iteracion[j],Grado[i]);
-         FuncionDerivada[j] += DerivadaCoeficiente[i] * pow(Iteracion[j], DerivadaGrado[i]);
-      }
-      Iteracion[j + 1] = Iteracion[j] - (Funcion[j]/FuncionDerivada[j]);
-   }
-   cout << "Solucion mas cercana a " << Iteracion[0] << ": " << Iteracion[Precision];
 }
