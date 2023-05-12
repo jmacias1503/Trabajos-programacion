@@ -40,16 +40,6 @@ string Signo(float Coeficiente[], int i) {
    }
    return valor;
 }
-int ValorFuncion (float Coeficiente[], float Grado[], float Iteracion[], int i) {
-   float FuncionDespejada;
-   FuncionDespejada += Coeficiente[i] * pow(Iteracion[i],Grado[i]);
-   return FuncionDespejada;
-}
-int ValorFuncionDerivada(float DerivadaCoeficiente[], float DerivadaGrado[], float Iteracion[], int i) {
-   float FuncionDerivadaDespejada;
-   FuncionDerivadaDespejada += DerivadaCoeficiente[i] * pow(Iteracion[i],DerivadaGrado[i]);
-   return FuncionDerivadaDespejada;
-}
 int main () {
    int Terminos, i;
 
@@ -92,4 +82,5 @@ int main () {
       }
       Iteracion[j + 1] = Iteracion[j] - (Funcion[j]/FuncionDerivada[j]);
    }
+   cout << "Solucion mas cercana a " << Iteracion[0] << ": " << Iteracion[Precision];
 }
