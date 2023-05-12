@@ -61,8 +61,8 @@ int main () {
    }
    cout << "\nf'(x) = " ;
    for (i = 0; i < Terminos; i++) {
-      DerivadaCoeficiente[i] *= Grado[i];
-      DerivadaGrado[i]--;
+      DerivadaCoeficiente[i] = Coeficiente[i] * Grado[i];
+      DerivadaGrado[i] = Grado[i]--;
       valor[i] = Signo(Coeficiente, i);
       Literales(DerivadaCoeficiente, i, DerivadaGrado, DerivadaValor);
    }
