@@ -71,8 +71,7 @@ int main () {
    // empieza la solución de la ecuación
    // Utilizar if's para saber si x_n+1 + x_n == 0
    int j;
-   
-   float iteracion[j], funcion[j], funcionDeriada[j];
+   float iteracion[100], funcion[100], funcionDeriada[100];
    cout << "Numero al azar: ";
    cin >> iteracion[0];
 
@@ -84,5 +83,4 @@ int main () {
       }
       iteracion[j+1] = iteracion[j] - (funcion[j]/funcionDeriada[j]);
    }
-   cout << "el joto vale " << j;
 }
