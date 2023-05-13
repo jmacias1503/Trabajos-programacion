@@ -70,20 +70,19 @@ int main () {
 
    // empieza la solución de la ecuación
    // Utilizar if's para saber si x_n+1 + x_n == 0
-
-   int precision;
-   cout << "Precision para el valor (iteraciones): ";
-   cin >> precision;
-   float iteracion[precision], funcion[precision], funcionDerivada[precision];
-   cout << "Valor de primer iteracion: ";
+   int j = 2;
+   
+   float iteracion[j], funcion[j], funcionDeriada[j];
+   cout << "Numero al azar: ";
    cin >> iteracion[0];
 
-   for (int j = 0; i < precision; precision++) {
+   for (j = 0; iteracion[j+1] - iteracion[j] != 0; j++) {
+
       for (int i = 0; i < terminos; i++) {
-         funcion[j] += coeficiente[i] * pow(iteracion[j],grado[i]);
-         funcionDerivada[j] += derivadaCoeficiente[i] * pow(iteracion[j], derivadaGrado[i]);
+         funcion[j] = coeficiente[i] * pow(iteracion[j],grado[i]);
+         funcionDeriada[j] = derivadaCoeficiente[i] * pow(iteracion[j],derivadaGrado[i]);
       }
-      iteracion[j + 1] = iteracion[j] - (funcion[j]/funcionDerivada[j]);
+      iteracion[j+1] = iteracion[j] - (funcion[j]/funcionDeriada[j]);
    }
-   cout << "Solucion mas cercana a " << iteracion[0] << ": " << iteracion[precision];
+   cout << "el joto vale " << j;
 }
