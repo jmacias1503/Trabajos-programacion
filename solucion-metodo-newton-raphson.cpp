@@ -70,7 +70,7 @@ int main () {
 
    // empieza la solución de la ecuación
    // Utilizar if's para saber si x_n+1 + x_n == 0
-   int j = 2;
+   int j;
    
    float iteracion[j], funcion[j], funcionDeriada[j];
    cout << "Numero al azar: ";
