@@ -76,7 +76,7 @@ int main () {
    cout << "Numero al azar: ";
    cin >> iteracion[0];
 
-   for (j = 0; iteracion[j+1] - iteracion[j] != 0; j++) {
+   for (j = 0; (iteracion[j+1] - iteracion[j] != 0); j++) {
 
       for (int i = 0; i < terminos; i++) {
          funcion[j] = coeficiente[i] * pow(iteracion[j],grado[i]);
