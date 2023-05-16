@@ -90,10 +90,12 @@ int main () {
    int tolerancia;
    cout << "tolerancia: ";
    cin >> tolerancia;
-   float iteracion[tolerancia];
+   float iteracion[tolerancia], funcion[tolerancia], derivada[tolerancia];
    cout << "Primer valor: ";
    cin >> iteracion[0];
    int j = 0;
-   cout << "funcion resuelta: " << FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
-   cout << endl << "funcion derivada: " << DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j);
+   funcion[j] = FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
+   derivada[j] = DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j);
+   cout << "funcion resuelta: " << FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j) << "  " << funcion[j];
+   cout << endl << "funcion derivada: " << DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j) << "  " << derivada[j];
 }
