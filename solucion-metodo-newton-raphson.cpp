@@ -104,5 +104,8 @@ int main () {
       funcion[j] = FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
       derivada[j] = DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j);
       cout << "x[" << j << "] = " << iteracion[j] << endl;
+      if (iteracion[j] - iteracion[j-1] == 0) {
+         break;
+      }
    }
 }
