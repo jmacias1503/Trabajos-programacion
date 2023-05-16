@@ -103,6 +103,6 @@ int main () {
       iteracion[j] = iteracion[j-1] - (funcion[j-1]/(derivada[j-1]-funcion[j-1]));
       funcion[j] = FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
       derivada[j] = DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j);
-      cout << "x[" << j+1 << "] = " << iteracion[j+1] << endl;
+      cout << "x[" << j << "] = " << iteracion[j] << endl;
    }
 }
