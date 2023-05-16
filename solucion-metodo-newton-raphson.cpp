@@ -41,6 +41,22 @@ string Signo(float coeficiente[], int i) {
    }
    return valor;
 }
+
+float FuncionIteracion(float coeficiente[], float grado[], float iteracion[], int terminos, int i, int j) {
+   float resultado;
+   for (int i = 0; i < terminos; i++) {
+      resultado += coeficiente[i] * pow(iteracion[j],grado[i]);
+   }
+   return resultado;
+}
+float DerivadaIteracion(float derivadaCoeficiente[], float derivadaGrado[], float iteracion[], int terminos, int i, int j) {
+   float resultado;
+   for (int i = 0; i < terminos; i++) {
+      resultado += derivadaCoeficiente[i] * pow(iteracion[j], derivadaGrado[i]);
+   }
+   return resultado;
+}
+
 int main () {
    int terminos, i;
 
@@ -70,4 +86,13 @@ int main () {
    cout << endl;
 
    // Empieza solucion de la ecuacion
+   
+   int tolerancia;
+   cout << "tolerancia: ";
+   cin >> tolerancia;
+   float iteracion[tolerancia];
+   cout << "Primer valor: ";
+   cin >> iteracion[0];
+   int j = 0;
+   cout << "funcion resuelta: " << FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
 }
