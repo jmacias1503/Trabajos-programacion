@@ -95,4 +95,5 @@ int main () {
    cin >> iteracion[0];
    int j = 0;
    cout << "funcion resuelta: " << FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
+   cout << endl << "funcion derivada: " << DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j);
 }
