@@ -44,14 +44,14 @@ string Signo(float coeficiente[], int i) {
 
 float FuncionIteracion(float coeficiente[], float grado[], float iteracion[], int terminos, int i, int j) {
    float resultado;
-   for (int i = 0; i < terminos; i++) {
+   for (i = 0; i < terminos; i++) {
       resultado += coeficiente[i] * pow(iteracion[j],grado[i]);
    }
    return resultado;
 }
 float DerivadaIteracion(float derivadaCoeficiente[], float derivadaGrado[], float iteracion[], int terminos, int i, int j) {
    float resultado;
-   for (int i = 0; i < terminos; i++) {
+   for (i = 0; i < terminos; i++) {
       resultado += derivadaCoeficiente[i] * pow(iteracion[j], derivadaGrado[i]);
    }
    return resultado;
