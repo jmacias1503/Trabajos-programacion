@@ -99,10 +99,10 @@ int main () {
    cout << "funcion resuelta: " << FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j) << "  " << funcion[j];
    cout << endl << "funcion derivada: " << DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j) << "  " << derivada[j] - funcion[j] << endl << endl;
 
-   for (j = 0; j < tolerancia; j++) {
+   for (j = 1; j < tolerancia; j++) {
+      iteracion[j] = iteracion[j-1] - (funcion[j-1]/(derivada[j-1]-funcion[j-1]));
       funcion[j] = FuncionIteracion(coeficiente, grado, iteracion, terminos, i, j);
       derivada[j] = DerivadaIteracion(derivadaCoeficiente, derivadaGrado, iteracion, terminos, i, j);
-      iteracion[j+1] = iteracion[j] - (funcion[j]/(derivada[j]-funcion[j]));
       cout << "x[" << j+1 << "] = " << iteracion[j+1] << endl;
    }
 }
