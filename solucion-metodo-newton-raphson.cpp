@@ -3,10 +3,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
-ofstream out ("output.txt");
-
 int Literales(float c[], int i, float e[], string v[]){
-
    if (c[i] == 0) {
       return 0;
    }
@@ -23,7 +20,6 @@ int Literales(float c[], int i, float e[], string v[]){
    cout << " ";
    return 0;
 }
-
 void SumaTerminos (float c[], float e[], int n, int i){
 
    for (i = 0; i < n ; i++) {
@@ -61,7 +57,6 @@ float DerivadaIteracion(float dc[], float de[], float x[], int n, int i, int j) 
 
 int main () {
    int n, i;
-
    cout << "Terminos: "; cin >> n;
    float c[n], e[n], dc[n], de[n];
    string v[n], derivadaValor[n];
@@ -75,7 +70,6 @@ int main () {
       cout << endl;
    }
    cout << "f(x) = ";
-   out << "f(x) = ";
    for (int i =0; i < n; i++) {
    Literales(c, i, e, v);
    }
@@ -87,14 +81,12 @@ int main () {
       Literales(dc, i, de, derivadaValor);
    }
    cout << endl;
-
    // Empieza solucion de la ecuacion
-   
    int t;
    cout << "t: ";
    cin >> t;
    float x[t], f[t], df[t];
-   cout << "Primer v: ";
+   cout << "Primer valor: ";
    cin >> x[0];
    int j = 0;
    f[j] = FuncionIteracion(c, e, x, n, i, j);
@@ -107,7 +99,6 @@ int main () {
       f[j] = FuncionIteracion(c, e, x, n, i, j);
       df[j] = DerivadaIteracion(dc, de, x, n, i, j);
       //cout << "x[" << j << "] = " << x[j] << endl;
-      out << "x[" << j << "] = " << x[j] << endl;
       if (x[j] - x[j-1] == 0 || x[j] == 0) {
          break;
       }
