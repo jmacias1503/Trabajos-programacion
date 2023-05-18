@@ -86,7 +86,7 @@ int main () {
    cout << "tolerancia: ";
    cin >> t;
    float x[t], f[t], df[t];
-   cout << "Primer valor: ";
+   cout << "Primer valor (distinto de 0): ";
    cin >> x[0];
    int j = 0;
    f[j] = FuncionIteracion(c, e, x, n, i, j);
