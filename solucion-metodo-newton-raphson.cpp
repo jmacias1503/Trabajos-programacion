@@ -83,7 +83,7 @@ int main () {
    cout << endl;
    // Empieza solucion de la ecuacion
    int t;
-   cout << "t: ";
+   cout << "tolerancia: ";
    cin >> t;
    float x[t], f[t], df[t];
    cout << "Primer valor: ";
@@ -98,7 +98,7 @@ int main () {
       x[j] = x[j-1] - (f[j-1]/(df[j-1]-f[j-1]));
       f[j] = FuncionIteracion(c, e, x, n, i, j);
       df[j] = DerivadaIteracion(dc, de, x, n, i, j);
-      //cout << "x[" << j << "] = " << x[j] << endl;
+      cout << "x[" << j << "] = " << x[j] << endl;
       if (x[j] - x[j-1] == 0 || x[j] == 0) {
          break;
       }
