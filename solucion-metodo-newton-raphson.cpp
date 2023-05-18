@@ -1,7 +1,6 @@
 #include <cmath>
 #include <iostream>
 #include <string>
-#include <fstream>
 using namespace std;
 int Literales(float c[], int i, float e[], string v[]){
    if (c[i] == 0) {
@@ -104,4 +103,5 @@ int main () {
       }
    }
    cout << "Solucion mas cercana a " << x[0] << ": " << x[j];
+   cout << endl;
 }
