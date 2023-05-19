@@ -47,11 +47,11 @@ float FuncionIteracion(float c[], float e[], float x[], int n, int i, int j) {
    return resultado;
 }
 float DerivadaIteracion(float dc[], float de[], float x[], int n, int i, int j) {
-   float resultado;
+   float resultadoDerivada;
    for (i = 0; i < n; i++) {
-      resultado += dc[i] * pow(x[j], de[i]);
+      resultadoDerivada += dc[i] * pow(x[j], de[i]);
    }
-   return resultado;
+   return resultadoDerivada;
 }
 
 int main () {
