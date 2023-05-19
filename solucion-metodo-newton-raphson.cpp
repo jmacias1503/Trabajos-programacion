@@ -80,7 +80,7 @@ int main () {
       Literales(dc, i, de, derivadaValor);
    }
    cout << endl;
-   // Empieza solucion de la ecuacion
+   // Empieza solución de la ecuación
    int t;
    cout << "tolerancia: ";
    cin >> t;
