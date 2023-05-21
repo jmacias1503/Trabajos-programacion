@@ -7,9 +7,7 @@ int main () {
    bool imag = false;
    cout << "Grado de la ecuacion: ";
    cin >> g;
-
    float c[g+1], dc[g];
-
    for (int i = 0 ; i <= g; i++) {
       float de = g-1-i;
       cout << "Termino " << i + 1 << ": " << endl;
@@ -57,7 +55,7 @@ int main () {
       }
    }
    if (imag == true) {
-      cout << "La ecuacion tiene soluciones imaginarias";
+      cout << "La ecuacion tiene soluciones imaginarias" << endl;
    }
    else {
       cout << "Soluciones: " << endl << endl;
