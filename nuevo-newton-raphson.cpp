@@ -40,6 +40,7 @@ int main () {
          }
          else {
             x[j] = -123456789.09876543210;
+            break;
          }
          if (x[j+1] - x[j] == 0) {
             break;
