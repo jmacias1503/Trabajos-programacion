@@ -3,6 +3,7 @@
 using namespace std;
 int main () {
    int g;
+   bool err = false;
    cout << "Grado de la ecuacion: ";
    cin >> g;
 
@@ -39,14 +40,14 @@ int main () {
             x[j+ 1] = x[j] - (f[j]/df[j]);
          }
          else if (df[j] == 0){
-            x[j] = -123456789.09876543210;
+            err = true;
          }
-         if (x[j+1] - x[j] == 0 || x[j] == -123456789.09876543210) {
+         if (x[j+1] - x[j] == 0 || err == true) {
             break;
          }
       }
       r[i] = x[j];
-      if ((i != 0 && r[i] == r[i-1]) || x[j] == -123456789.09876543210) {
+      if ((i != 0 && r[i] == r[i-1]) || err == true) {
          i--;
          cout << "\nINTRODUCE OTRO VALOR\n";
       }
