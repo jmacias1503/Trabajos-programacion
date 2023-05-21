@@ -38,6 +38,7 @@ int main () {
          }
          if (df[j] != 0) {
             x[j+ 1] = x[j] - (f[j]/df[j]);
+            err = false;
          }
          else if (df[j] == 0){
             err = true;
