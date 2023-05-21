@@ -34,7 +34,7 @@ int main () {
          }
          cout << "funcion: " << f[j] << endl;
          for (k = 0; k < g; k++) {
-            df[j] += dc[k] * pow(x[j],(g-k));
+            df[j] += dc[k] * pow(x[j],(g-k-1));
          }
          cout << "derivada: " << df[j] << endl;
          x[j+ 1] = x[j] - (f[j]/df[j]);
