@@ -38,12 +38,15 @@ int main () {
          if (df[j != 0]) {
             x[j+ 1] = x[j] - (f[j]/df[j]);
          }
+         else {
+            x[j] = -123456789.09876543210;
+         }
          if (x[j+1] - x[j] == 0) {
             break;
          }
       }
       r[i] = x[j];
-      if (i != 0 && r[i] == r[i-1]) {
+      if ((i != 0 && r[i] == r[i-1]) || r[i] == -123456789.09876543210) {
          i--;
          cout << "\nINTRODUCE OTRO VALOR\n";
       }
