@@ -32,11 +32,9 @@ int main () {
          for (int k = 0; k <= g; k++) {
             f[j] += c[k] * pow(x[j],(g-k));
          }
-         cout << "funcion: " << f[j] << endl;
          for (k = 0; k < g; k++) {
             df[j] += dc[k] * pow(x[j],(g-k-1));
          }
-         cout << "derivada: " << df[j] << endl;
          x[j+ 1] = x[j] - (f[j]/df[j]);
          if (x[j+1] - x[j] == 0) {
             break;
