@@ -41,6 +41,9 @@ int main () {
          }
       }
       r[i] = x[j];
+      if (i != 0 && r[i] == r[i-1]) {
+         i--;
+      }
    }
    cout << "Soluciones: " << endl << endl;
    for (i = 0; i < g; i++) {
