@@ -43,6 +43,7 @@ int main () {
       r[i] = x[j];
       if (i != 0 && r[i] == r[i-1]) {
          i--;
+         cout << "\n INTRODUCE OTRO VALOR";
       }
    }
    cout << "Soluciones: " << endl << endl;
