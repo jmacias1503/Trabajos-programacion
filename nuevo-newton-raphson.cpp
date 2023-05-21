@@ -4,6 +4,7 @@ using namespace std;
 int main () {
    int g;
    bool err = false;
+   bool imag = false;
    cout << "Grado de la ecuacion: ";
    cin >> g;
 
@@ -28,6 +29,7 @@ int main () {
       cout << "Valor " << i + 1 << " a evaluar: ";
       cin >> x[0];
       for (j = 0; j <= t; j++) {
+         imag = true;
          f[j] = 0;
          df[j] = 0;
          for (int k = 0; k <= g; k++) {
@@ -44,6 +46,7 @@ int main () {
             err = true;
          }
          if (x[j+1] - x[j] == 0 || err == true) {
+            imag = false;
             break;
          }
       }
@@ -53,8 +56,8 @@ int main () {
          cout << "\nINTRODUCE OTRO VALOR\n";
       }
    }
-   if (j == t && x[j] - x[j-1] != 0) {
-      cout << "La ecuacion no tiene soluciones reales";
+   if (imag == true) {
+      cout << "La ecuacion tiene soluciones imaginarias";
    }
    else {
       cout << "Soluciones: " << endl << endl;
