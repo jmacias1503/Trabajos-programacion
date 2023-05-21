@@ -4,10 +4,10 @@ using namespace std;
 int main () {
    int g;
    bool err = false;
-   bool imag = false;
    cout << "Grado de la ecuacion: ";
    cin >> g;
    float c[g+1], dc[g];
+   bool imag[g];
    for (int i = 0 ; i <= g; i++) {
       float de = g-1-i;
       cout << "Termino " << i + 1 << ": " << endl;
@@ -27,7 +27,7 @@ int main () {
       cout << "Valor " << i + 1 << " a evaluar: ";
       cin >> x[0];
       for (j = 0; j <= t; j++) {
-         imag = true;
+         imag[i] = true;
          f[j] = 0;
          df[j] = 0;
          for (int k = 0; k <= g; k++) {
@@ -44,7 +44,7 @@ int main () {
             err = true;
          }
          if (x[j+1] - x[j] == 0 || err == true) {
-            imag = false;
+            imag[i] = false;
             break;
          }
       }
@@ -54,13 +54,15 @@ int main () {
          cout << "\nINTRODUCE OTRO VALOR\n";
       }
    }
-   if (imag == true) {
-      cout << "La ecuacion tiene soluciones imaginarias" << endl;
-   }
-   else {
       cout << "Soluciones: " << endl << endl;
       for (i = 0; i < g; i++) {
-         cout << "Solucion " << i + 1 << ": " << r[i] << endl;
+         cout << "Solucion " << i + 1 << ": ";
+         if (imag[i] == true) {
+            cout << "imaginaria";
+         }
+         else {
+            cout << r[i];
+         }
+         cout << endl;
       }
-   }
 }
