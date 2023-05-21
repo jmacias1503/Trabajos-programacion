@@ -53,8 +53,13 @@ int main () {
          cout << "\nINTRODUCE OTRO VALOR\n";
       }
    }
-   cout << "Soluciones: " << endl << endl;
-   for (i = 0; i < g; i++) {
-      cout << "Solucion " << i + 1 << ": " << r[i] << endl;
+   if (j == t && x[j] - x[j-1] != 0) {
+      cout << "La ecuacion no tiene soluciones reales";
+   }
+   else {
+      cout << "Soluciones: " << endl << endl;
+      for (i = 0; i < g; i++) {
+         cout << "Solucion " << i + 1 << ": " << r[i] << endl;
+      }
    }
 }
