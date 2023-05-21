@@ -35,7 +35,9 @@ int main () {
          for (k = 0; k < g; k++) {
             df[j] += dc[k] * pow(x[j],(g-k-1));
          }
-         x[j+ 1] = x[j] - (f[j]/df[j]);
+         if (df[j != 0]) {
+            x[j+ 1] = x[j] - (f[j]/df[j]);
+         }
          if (x[j+1] - x[j] == 0) {
             break;
          }
