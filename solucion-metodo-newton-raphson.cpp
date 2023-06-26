@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 int main () {
-   int g;
+   int g, et = 0;
    bool err = false;
    cout << "Grado de la ecuacion: ";
    cin >> g;
@@ -51,6 +51,12 @@ int main () {
       r[i] = x[j];
       if ((i != 0 && r[i] == r[i-1]) || err == true) {
          i--;
+         et++;
+         if (et > 10) {
+            imag[i] = true;
+            err = false;
+            break;
+         }
          cout << "\nINTRODUCE OTRO VALOR\n";
       }
    }

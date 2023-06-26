@@ -1,35 +1,15 @@
 #include <iostream>
-#include <math.h>
-#include <cmath>
-using namespace std;
-
 int main(){
-
-    int a, b, c, d;
-    float real, imaginario;
-
-    cout << "a =";
-    cin >> a; cout << endl;
-
-    cout << "b =";
-    cin >> b; cout << endl;
-
-    cout << "c =";
-    cin >> c; cout << endl;
-
-    cout << "d =";
-    cin >> d; cout << endl;
-
-    real = (a*c + b*d)/(pow(c,2) + pow(d,2));
-    imaginario = (b*c - a*d)/(pow(c,2) + pow(d,2));
-
-    cout << "z =" << real << " ";
-
-    if (imaginario > 0){
-
-        cout << "+";
-    }
-
-    cout << imaginario << "i";
-    cout << endl;
+   char s = ' ';
+   float a, b, c, d, r, i;
+   std::cout << "a =";   std::cin >> a;
+   std::cout << "\nb ="; std::cin >> b;
+   std::cout << "\nc ="; std::cin >> c;
+   std::cout << "\nd ="; std::cin >> d;
+   r = (a*c + b*d)/(c*c + d*d);
+   i = (b*c - a*d)/(c*c + d*d);
+   if (i > 0)
+      s = '+';
+   std::cout << "z =" << r << " " << s << i << "i" << std::endl;
+   return 0;
 }
